@@ -15,9 +15,7 @@ db.init_app(app)
 
 
 # User Pre-Configured details
-user = {
-    "username": "admin", "password": "admin123"
-}
+user = {"username": "admin", "password": "admin123"}
 
 # make sure db migrations is applied
 @app.before_first_request
@@ -31,7 +29,10 @@ class UserLogin(Resource):
     def post(self):
         data = request.get_json()
 
-        if data['username'] == user['username'] and data['password'] == user["password"]:
+        if (
+            data["username"] == user["username"]
+            and data["password"] == user["password"]
+        ):
             return {"message": "logged in"}, 200
         else:
             return {"message": "wrong credentials"}, 404
@@ -178,7 +179,7 @@ class FlightView(Resource):
         return {"message": "Flight not found"}, 404
 
 
-api.add_resource(UserLogin, '/login')
+api.add_resource(UserLogin, "/login")
 api.add_resource(Airports, "/airports")
 api.add_resource(Planes, "/planes")
 api.add_resource(Flights, "/flights")
