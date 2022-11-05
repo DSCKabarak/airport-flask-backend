@@ -2,8 +2,11 @@ from flask import Flask, jsonify, request
 from flask_restful import Resource, Api, marshal_with
 from models import db, Airport, Plane, Flight
 from schemas import airport, plane, flight
+from flask_redoc import Redoc
+
 
 app = Flask(__name__)
+redoc = Redoc(app, "openapi.yaml")
 
 # Database setup & Config
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
