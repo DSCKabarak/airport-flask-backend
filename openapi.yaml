@@ -1,0 +1,188 @@
+openapi: 3.0.0
+info:
+  title: Airport Crud Collection
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:5000
+tags:
+  - name: Airports
+  - name: Planes
+  - name: Flights
+  - name: Auth
+paths:
+  /airports:
+    get:
+      tags:
+        - Airports
+      summary: Get airport lists
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Airports
+      summary: Create new airport
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                airportcode: 200
+                airportname: JFK
+                country: USA
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /airport/1:
+    get:
+      tags:
+        - Airports
+      summary: Get airport by id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Airports
+      summary: Update airport by id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Airports
+      summary: Delete airport by id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /planes:
+    get:
+      tags:
+        - Planes
+      summary: Get plane list
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Planes
+      summary: Create new plane
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /plane/:
+    put:
+      tags:
+        - Planes
+      summary: Update plane details
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /plane/1:
+    get:
+      tags:
+        - Planes
+      summary: Get plane by id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /plane/2:
+    delete:
+      tags:
+        - Planes
+      summary: Delete Plane by id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /flights:
+    get:
+      tags:
+        - Flights
+      summary: Get flights list
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Flights
+      summary: Create new Flight
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                plane_id: 3
+                airportfrom_id: 1
+                airportto_id: 2
+                date: '2022-10-15'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /flight/1:
+    delete:
+      tags:
+        - Flights
+      summary: Delete by id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /login:
+    post:
+      tags:
+        - Auth
+      summary: Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: admin
+                password: admin123
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
