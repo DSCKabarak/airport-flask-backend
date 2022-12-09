@@ -1,4 +1,4 @@
-run = "python3 app.py"
+run = "flask --app app run --host 0.0.0.0 --port 80"
 
 # The primary language of the repl. There can be others, though!
 language = "python3"
