@@ -40,6 +40,32 @@ The online documentation is available at this endpoint
 
 This is a simplified schema of the the various endpoints available
 
+| Airport| Endpoints |
+|---------|---------|
+| `/airport/${id}` - `DELETE` | ❌ Deletes Airport by given id |
+| `/airport/${id}` - `GET` | ✅ GETS Airport by given id |
+| `/airport/${id}` - `PUT` | 📝 Updates Airport details of a given id |
+| `/airports` - `PUT` | ✅ Get all available Airport details |
+| `/airports` - `POST` | 🔧 Create a new airport |
+
+| Plane | Endpoints |
+|---------|---------|
+| `/plane` - `PUT` | 📝 Updates Plane details |
+| `/plane/${id}` - `GET` | ✅ Gets Plane of details of given id |
+| `/plane` - `DELETE` | ❌ Deletes Plane of given ID |
+| `/planes` - `GET` | ✅ Gets all available Plane details |
+| `/planes` - `POST` | 🔧 Creates new Plane details |
+
+| Flight | Endpoints |
+|---------|---------|
+| `/flight/${id}` - `DELETE` | ❌ Deletes a flight of given ID |
+| `/flights` - `GET` | ✅ Gets all available flights |
+| `/flights` - `POST` | 🔧 Creates new flight |
+
+
+
+
+
 
 ## Authors
 
