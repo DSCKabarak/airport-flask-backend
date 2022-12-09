@@ -35,10 +35,11 @@ python app.py
 ## Documentation
 I used redoc with openapi spec and postman to document the project.
 
-The documentation is available at this endpoint 
-```
-<API_URL>/docs
-```
+The online documentation is available at this endpoint 
+[`challenge/docs`](https://airport-flask-backend.walterbanda.repl.co/docs)
+
+This is a simplified schema of the the various endpoints available
+
 
 ## Authors
 
