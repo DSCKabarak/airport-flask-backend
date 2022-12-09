@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request,redirect
 from flask_restful import Resource, Api, marshal_with
 from models import db, Airport, Plane, Flight
 from schemas import airport, plane, flight
@@ -39,6 +39,10 @@ class UserLogin(Resource):
             return {"message": "logged in"}, 200
         else:
             return {"message": "wrong credentials"}, 404
+
+class Docs(Resource):
+  def get(self):
+    return redirect("/docs")
 
 
 class Airports(Resource):
@@ -181,7 +185,7 @@ class FlightView(Resource):
 
         return {"message": "Flight not found"}, 404
 
-
+api.add_resource(Docs,'/')
 api.add_resource(UserLogin, "/login")
 api.add_resource(Airports, "/airports")
 api.add_resource(Planes, "/planes")
